@@ -1,0 +1,134 @@
+{
+  "hiveBotId": "8cdda32f-d8f3-480c-af93-d51580d31abc",
+  "executionId": "00000000-0000-0000-0000-000000000000",
+  "identityList": [],
+  "connectionParams": null,
+  "proposedBotInputs": {
+    "PythonLocation": {
+      "value": "C:\\Users\\dell\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "OutputPath": {
+      "value": "C:\\Program Files (x86)\\Beezlabs\\RPAHive\\output\\output.json",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "language": {
+      "value": "EN",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "serverName": {
+      "value": "Q00 [bacsapq00.gva.data]",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "client": {
+      "value": "100",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "beekeeperUrl": {
+      "value": "https://dev-tulip.onebacardi.com/",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "transaction_code": {
+      "value": "vbo3",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "materialNumber": {
+      "value": "3300016003",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "MaterialIterationValue": {
+      "value": "50",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "materialAmount": {
+      "value": "7500",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "rebateAgreementNumberLumpsum": {
+      "value": "422249",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+        "waitingTime": {
+      "value": "90",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "dmscred": {
+      "value": "tulipGeneric",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "sapCred": {
+      "value": "sapQ00",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "rdp_cred_key": {
+      "value": "RDPCred",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "login_cred_key": {
+      "value": "LoginCred",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "server_address": {
+      "value": "usmas304.bl.bacardi.net",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "connect_rdp_api_url": {
+      "value": "https://usmas523.bl.bacardi.net/api/v1/capture/connectRDP",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "close_rdp_api_url": {
+      "value": "https://usmas523.bl.bacardi.net/api/v1/capture/closeRDP",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "access_token_baseurl": {
+      "value": "https://login.microsoftonline.com/c841f8a8-bd5c-4fef-812b-be529c35e6b0/oauth2/v2.0/token",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    },
+    "server_name": {
+      "value": "Bacardi-RPA-Indian",
+      "type": 0,
+      "objectTypeName": "",
+      "flowVariable": false
+    }
+  }
+}
