@@ -342,30 +342,30 @@ class BotLogic(Bot):
 
             # Double-click the current cell in the custom container shell
             self.sap_gui.session.findById("wnd[1]/usr/cntlCUSTOM_CONTAINER/shellcont/shell").doubleClickCurrentCell()
-
-            self.sap_gui.session.findById("wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]").setFocus()
-            self.sap_gui.session.findById(
-                "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]").caretPosition = 10
-            materialNumber = self.sap_gui.session.findById(
-                "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]").text
-            self.bot_output.add_variable(key="materialNumber", val=materialNumber)
-            # Set focus to the text field in the table
-            self.sap_gui.session.findById("wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").setFocus()
-
-            # Set the caret position in the text field
-            self.sap_gui.session.findById(
-                "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").caretPosition = 13
-            materialAmountUpdate = self.sap_gui.session.findById(
-                "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").text
-
-
-            materialValue = materialAmountUpdate
-            materialValue = re.sub(r'-', '', materialValue)
-            self.bot_output.add_variable(key="materialAmountUpdate", val=materialValue)
-            print(materialValue)
-            self.take_and_upload_screenshot(screenshot_name="vbo2MaterialAmountUpdateScreenshot")
-            self.bot_output.add_variable(key="vbo2MaterialAmountUpdateScreenshot",
-                                         val="vbo2MaterialAmountUpdateScreenshot")
+            #
+            # self.sap_gui.session.findById("wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]").setFocus()
+            # self.sap_gui.session.findById(
+            #     "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]").caretPosition = 10
+            # materialNumber = self.sap_gui.session.findById(
+            #     "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]").text
+            # self.bot_output.add_variable(key="materialNumber", val=materialNumber)
+            # # Set focus to the text field in the table
+            # self.sap_gui.session.findById("wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").setFocus()
+            #
+            # # Set the caret position in the text field
+            # self.sap_gui.session.findById(
+            #     "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").caretPosition = 13
+            # materialAmountUpdate = self.sap_gui.session.findById(
+            #     "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").text
+            #
+            #
+            # materialValue = materialAmountUpdate
+            # materialValue = re.sub(r'-', '', materialValue)
+            # self.bot_output.add_variable(key="materialAmountUpdate", val=materialValue)
+            # print(materialValue)
+            # screenshot = self.take_and_upload_screenshot(screenshot_name="vbo2MaterialAmountUpdateScreenshot")
+            # self.bot_output.add_variable(key="vbo2MaterialAmountUpdateScreenshot",
+            #                              val=screenshot)
             #
             # self.sap_gui.session.findById("wnd[0]/tbar[0]/okcd").text = self.input.transaction_code.value
             # self.sap_gui.session.findById("wnd[0]").sendVKey(0)
@@ -379,33 +379,40 @@ class BotLogic(Bot):
             # amount1 = self.input.materialAmount.value
             # amount2 = str(amount1)
             # formatted_amount1 = self.format_amount(amount2)  # Output: 6.500,00
-            # count = 0
-            # count1 = 1
-            # while count < int(self.input.MaterialIterationValue.value):
-            #     count += 1
-            #     count1 += 1
-            #     self.sap_gui.session.findById(
-            #         "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]").caretPosition = 3
-            #     materialNumber = self.sap_gui.get_text_field(
-            #         "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]")
-            #     print(materialNumber)
-            #     if int(materialNumber) == int(self.input.materialNumber.value):
-            #         alreadyExistingMaterialAmount = self.sap_gui.session.findById(
-            #             "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").text
-            #         self.bot_output.add_variable(key="alreadyExistingMaterialAmount", val=alreadyExistingMaterialAmount)
-            #         self.sap_gui.session.findById(
-            #             "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").text = str(formatted_amount1)
-            #         self.bot_output.add_variable(key="materialAmountUpdate", val=formatted_amount1)
-            #         self.sap_gui.session.findById(
-            #             "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").setFocus()
-            #         self.sap_gui.session.findById(
-            #             "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").caretPosition = 16
-            #         second_Screenshot = self.take_and_upload_screenshot(
-            #             screenshot_name="vbo2MaterialAmountUpdateScreenshot")
-            #         self.bot_output.add_variable(key="vbo2MaterialAmountUpdateScreenshot", val=second_Screenshot)
-            #         break
-            #     self.sap_gui.session.findById(
-            #         "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY").verticalScrollbar.position = count1
+            count = 0
+            count1 = 1
+            while count < int(self.input.MaterialIterationValue.value):
+                count += 1
+                count1 += 1
+                self.sap_gui.session.findById(
+                    "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]").caretPosition = 3
+                materialNumber = self.sap_gui.get_text_field(
+                    "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]")
+                print(materialNumber)
+                if int(materialNumber) == int(self.input.materialNumber.value):
+                    # alreadyExistingMaterialAmount = self.sap_gui.session.findById(
+                        # "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").text
+                    # self.bot_output.add_variable(key="alreadyExistingMaterialAmount", val=alreadyExistingMaterialAmount)
+                    materialamount = self.sap_gui.session.findById(
+                        "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").text
+                    materialValue = materialamount
+                    # value = "13.46-"
+                    if materialValue.endswith("-"):
+                        materialValue = "-" + materialValue[:-1]
+                    # print(value)
+                    # materialValue = re.sub(r'-', '', materialValue)
+                    self.bot_output.add_variable(key="materialAmountUpdate", val=materialValue)
+                    # self.bot_output.add_variable(key="materialAmountUpdate", val=materialamount)
+                    self.sap_gui.session.findById(
+                        "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").setFocus()
+                    self.sap_gui.session.findById(
+                        "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/txtKONP-KBETR[2,0]").caretPosition = 16
+                    second_Screenshot = self.take_and_upload_screenshot(
+                        screenshot_name="vbo2MaterialAmountUpdateScreenshot")
+                    self.bot_output.add_variable(key="vbo2MaterialAmountUpdateScreenshot", val=second_Screenshot)
+                    break
+                self.sap_gui.session.findById(
+                    "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY").verticalScrollbar.position = count1
             # # self.sap_gui.session.findById(
             # #     "wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY/ctxtKOMG-MATNR[0,0]").caretPosition = 10 # pointing the first row
             # # self.sap_gui.session.findById("wnd[0]/usr/tblSAPMV13ATCTRL_FAST_ENTRY").verticalScrollbar.position = 1
